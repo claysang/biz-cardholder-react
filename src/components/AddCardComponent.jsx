@@ -41,15 +41,6 @@ const AddCardComponent = () => {
         }}
       />
       <TextField
-        label="Add address"
-        variant="outlined"
-        size="small"
-        value={address}
-        onChange={(e) => {
-          setAddress(e.target.value);
-        }}
-      />
-      <TextField
         label="Add company"
         variant="outlined"
         size="small"
@@ -65,6 +56,15 @@ const AddCardComponent = () => {
         value={contact}
         onChange={(e) => {
           setContact(e.target.value);
+        }}
+      />
+      <TextField
+        label="Add address"
+        variant="outlined"
+        size="small"
+        value={address}
+        onChange={(e) => {
+          setAddress(e.target.value);
         }}
       />
       <Button variant="outlined" onClick={onAddCard}>
