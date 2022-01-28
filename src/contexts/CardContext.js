@@ -5,22 +5,7 @@ import { Action, cardReducer } from '../reducers/CardReducer';
 export const CardContext = createContext();
 
 const CardContextProvider = (props) => {
-  const [cards, dispatch] = useReducer(cardReducer, [
-    {
-      name: 'Chao',
-      title: null,
-      company: 'TW',
-      contact: '13312345678',
-      address: 'XYC',
-    },
-    {
-      name: 'Chao',
-      title: null,
-      company: 'TW',
-      contact: '13312345678',
-      address: 'XYC',
-    },
-  ]);
+  const [cards, dispatch] = useReducer(cardReducer, []);
 
   useEffect(async () => {
     const cards = await getCardReq();

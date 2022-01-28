@@ -1,4 +1,4 @@
-const url = 'http://localhost:80/api/card';
+const url = 'http://localhost:65432/api/card';
 
 export const getCardReq = async () => {
   const res = await fetch(url);
