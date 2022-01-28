@@ -68,7 +68,7 @@ const AddCardComponent = () => {
         }}
       />
       <Button variant="outlined" onClick={onAddCard}>
-        Outlined
+        Add New
       </Button>
     </Grid>
   );
