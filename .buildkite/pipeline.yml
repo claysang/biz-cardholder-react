@@ -22,7 +22,4 @@ steps:
   - wait
 
   - label: ":rocket: Deploy"
-    plugins:
-      - docker-compose#v3.9.0:
-          config: docker-compose.yml
-          run: caddy
+    command: docker-compose up -d
