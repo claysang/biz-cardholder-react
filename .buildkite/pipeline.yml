@@ -22,7 +22,6 @@ steps:
   - wait
 
   - label: ":rocket: Deploy"
-    command: npm run pipelineTest
     plugins:
       - docker-compose#v3.9.0:
           config: docker-compose.yml
