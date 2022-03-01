@@ -10,7 +10,7 @@ steps:
   - wait
 
   - label: ":docker: Test %n"
-    command: npm run test --watchAll=false
+    command: npm run pipelineTest
     plugins:
       - docker-compose#v3.9.0:
           run: app
