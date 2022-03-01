@@ -1,3 +1,6 @@
+env:
+  COMPOSE_FILE: docker-compose.pipeline.yml
+
 steps:
   - label: ":docker: Build"
     plugins:
@@ -8,7 +11,7 @@ steps:
 
   - label: ":docker: Test %n"
     command: npm run test
-    parallelism: 25
+    parallelism: 5
     plugins:
       - docker-compose#v3.9.0:
           run: app
