@@ -1,8 +1,14 @@
 steps:
-  - name: ":node: UT"
-    command:
-      - "npm install"
-      - "npm run test"
+  - label: ":docker: Build"
     plugins:
-      - docker#v3.11.0:
-          image: "node:17-alpine3.14"
+      - docker-compose#v3.9.0:
+          build: app
+
+  - wait
+
+  - label: ":docker: Test %n"
+    command: npm run test
+    parallelism: 25
+    plugins:
+      - docker-compose#v3.9.0:
+          run: app
