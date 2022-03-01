@@ -6,6 +6,7 @@ steps:
     plugins:
       - docker-compose#v3.9.0:
           build: app
+          image-repository: index.docker.io/myorg/myrepo
 
   - wait
 
