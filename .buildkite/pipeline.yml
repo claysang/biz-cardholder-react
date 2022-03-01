@@ -11,7 +11,7 @@ steps:
 
   - label: ":docker: Test %n"
     command: npm run test
-    parallelism: 5
+    parallelism: 4
     plugins:
       - docker-compose#v3.9.0:
           run: app
