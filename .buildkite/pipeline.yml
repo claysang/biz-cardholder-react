@@ -3,6 +3,7 @@ env:
 
 steps:
   - label: ":docker: Build"
+    artifact_paths: "build/*"
     plugins:
       - docker-compose#v3.9.0:
           build: app
