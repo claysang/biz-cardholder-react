@@ -1,0 +1,8 @@
+steps:
+  - name: ":node: UT"
+    command:
+    - "npm install"
+    - "npm run test"
+    plugins:
+      - docker#v3.11.0:
+          image: "node:17-alpine3.14"
