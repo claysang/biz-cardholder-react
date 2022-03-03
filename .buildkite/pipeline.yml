@@ -1,12 +1,10 @@
-env:
-  COMPOSE_FILE: docker-compose.pipeline.yml
-
 steps:
   - label: ":docker: Test"
     command: npm run pipelineTest
     plugins:
       - docker-compose#v3.9.0:
           run: ut
+          config: docker-compose.pipeline.ut.yml
 
   - wait
 
