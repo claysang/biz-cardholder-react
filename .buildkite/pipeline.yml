@@ -2,22 +2,21 @@ env:
   COMPOSE_FILE: docker-compose.pipeline.yml
 
 steps:
-  - label: ":docker: Build"
-    artifact_paths: "/app/build/*"
-    plugins:
-      - docker-compose#v3.9.0:
-          build: app
-          volumes:
-            - "./build:/app/build"
-          # image-repository: index.docker.io/myorg/myrepo
-
-  - wait
-
   - label: ":docker: Test"
     command: npm run pipelineTest
     plugins:
       - docker-compose#v3.9.0:
-          run: app
+          run: ut
+
+  - wait
+
+  - label: ":docker: Build"
+    command: ./ops/build
+
+  - wait
+
+  - label: ":battery: Publish Image"
+    command: ./ops/pushImage
 
   - wait
 
