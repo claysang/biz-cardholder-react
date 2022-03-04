@@ -20,3 +20,8 @@ steps:
 
   - label: ":rocket: Deploy"
     command: ./ops/deploy
+
+  - block: ":rocket: WAIT WAIT WAIT! PROD PROD PROD!"
+
+  - label: ":rocket: Deploy to PROD"
+    command: ./ops/deployProd
