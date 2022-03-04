@@ -7,5 +7,3 @@ services:
       - target: 80
         published: 8080
         mode: host
-    environment:
-      REACT_APP_DP_ENV: test

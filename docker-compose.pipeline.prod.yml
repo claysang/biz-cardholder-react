@@ -1,11 +1,11 @@
 version: "3.7"
 services:
   bch-fe-prod:
-    image: 127.0.0.1:5000/bch-fe
-    build: .
+    image: 127.0.0.1:5000/bch-fe-prod
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
     ports:
       - target: 80
         published: 80
         mode: host
-    environment:
-      REACT_APP_DP_ENV: production
