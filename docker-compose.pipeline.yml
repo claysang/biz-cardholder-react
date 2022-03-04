@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  bch-fe:
+    image: 127.0.0.1:5000/bch-fe
+    build: .
+    ports:
+      - target: 80
+        published: 8080
+        mode: host
