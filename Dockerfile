@@ -9,6 +9,10 @@ RUN npm ci
 
 COPY . .
 
+ARG BUILD_ENV
+
+ENV REACT_APP_DP_ENV=${BUILD_ENV:-test}
+
 RUN npm run build
 
 # ========= RUN =========
